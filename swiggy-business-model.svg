@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .title{font:700 39px Arial,sans-serif;fill:#fff}.subtitle{font:400 19px Arial,sans-serif;fill:#ffe6e0}.head{font:700 18px Arial,sans-serif;fill:#f15b3a}.body{font:400 15px Arial,sans-serif;fill:#303030}.small{font:400 14px Arial,sans-serif;fill:#303030}.icon{font:700 34px Arial,sans-serif;fill:#f15b3a}.line{stroke:#727272;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity=".14"/></filter>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#727272"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#fff9f7"/>
+  <rect x="465" y="35" width="990" height="112" rx="22" fill="#f15b3a" filter="url(#shadow)"/>
+  <text x="960" y="85" text-anchor="middle" class="title">BUSINESS MODEL</text>
+  <text x="960" y="119" text-anchor="middle" class="subtitle">Swiggy – Food Delivery Platform</text>
+  <path class="line" d="M960 147V178"/>
+
+  <g filter="url(#shadow)"><rect x="565" y="180" width="790" height="170" rx="20" fill="#fff" stroke="#f15b3a" stroke-width="3"/></g>
+  <text x="635" y="244" class="icon">★</text><text x="725" y="218" class="head">VALUE PROPOSITION</text>
+  <text x="725" y="247" class="body">• Convenient food delivery from nearby restaurants</text><text x="725" y="273" class="body">• Wide choice of cuisines, offers and digital payments</text><text x="725" y="299" class="body">• Live order tracking, reliable support and quick delivery</text><text x="725" y="325" class="body">• Swiggy One membership and exclusive benefits</text>
+  <path class="line" d="M960 351V387"/>
+
+  <g filter="url(#shadow)"><rect x="610" y="390" width="700" height="118" rx="20" fill="#fff2ed" stroke="#f15b3a" stroke-width="3"/></g>
+  <text x="674" y="466" class="icon">⌁</text><text x="755" y="430" class="head">OUR SOLUTION</text>
+  <text x="755" y="459" class="body">Mobile and web platform that connects customers, restaurants</text><text x="755" y="483" class="body">and delivery partners for ordering, payment and delivery.</text>
+  <path class="line" d="M960 509V540H310V570"/><path class="line" d="M960 509V570"/><path class="line" d="M960 540H1610V570"/>
+
+  <g filter="url(#shadow)"><rect x="80" y="572" width="460" height="190" rx="18" fill="#fff" stroke="#f5a623" stroke-width="3"/></g>
+  <text x="115" y="630" class="icon">●●</text><text x="205" y="611" class="head">CUSTOMER SEGMENTS</text>
+  <text x="205" y="642" class="body">• Urban consumers and families</text><text x="205" y="668" class="body">• Students and working professionals</text><text x="205" y="694" class="body">• Corporate customers</text><text x="205" y="720" class="body">• Restaurants and cloud kitchens</text>
+
+  <g filter="url(#shadow)"><rect x="730" y="572" width="460" height="190" rx="18" fill="#fff" stroke="#e75b91" stroke-width="3"/></g>
+  <text x="765" y="630" class="icon">₹</text><text x="835" y="611" class="head">REVENUE STREAMS</text>
+  <text x="835" y="642" class="body">• Restaurant commissions</text><text x="835" y="668" class="body">• Delivery, platform and convenience fees</text><text x="835" y="694" class="body">• Sponsored listings and advertisements</text><text x="835" y="720" class="body">• Swiggy One subscriptions and Instamart</text>
+
+  <g filter="url(#shadow)"><rect x="1380" y="572" width="460" height="190" rx="18" fill="#fff" stroke="#2878c8" stroke-width="3"/></g>
+  <text x="1415" y="630" class="icon">↔</text><text x="1485" y="611" class="head">KEY PARTNERS</text>
+  <text x="1485" y="642" class="body">• Restaurants and cloud kitchens</text><text x="1485" y="668" class="body">• Delivery partners</text><text x="1485" y="694" class="body">• Payment and technology providers</text><text x="1485" y="720" class="body">• Grocery and retail suppliers</text>
+  <path class="line" d="M310 763V790"/><path class="line" d="M960 763V790"/><path class="line" d="M1610 763V790"/>
+
+  <g filter="url(#shadow)"><rect x="80" y="792" width="460" height="184" rx="18" fill="#fff" stroke="#27aaa9" stroke-width="3"/></g>
+  <text x="115" y="850" class="icon">◉</text><text x="205" y="831" class="head">CHANNELS</text>
+  <text x="205" y="862" class="body">• Swiggy mobile application</text><text x="205" y="888" class="body">• Website and social media</text><text x="205" y="914" class="body">• Digital marketing and referrals</text><text x="205" y="940" class="body">• Restaurant partnerships and offers</text>
+
+  <g filter="url(#shadow)"><rect x="730" y="792" width="460" height="184" rx="18" fill="#fff" stroke="#65ae43" stroke-width="3"/></g>
+  <text x="765" y="850" class="icon">⚙</text><text x="835" y="831" class="head">KEY RESOURCES</text>
+  <text x="835" y="862" class="body">• App, platform and cloud infrastructure</text><text x="835" y="888" class="body">• Restaurant and delivery network</text><text x="835" y="914" class="body">• Customer data and analytics</text><text x="835" y="940" class="body">• Brand, support and operations teams</text>
+
+  <g filter="url(#shadow)"><rect x="1380" y="792" width="460" height="184" rx="18" fill="#fff" stroke="#f5a623" stroke-width="3"/></g>
+  <text x="1415" y="850" class="icon">↗</text><text x="1485" y="831" class="head">COST STRUCTURE</text>
+  <text x="1485" y="862" class="body">• Delivery-partner payouts and incentives</text><text x="1485" y="888" class="body">• Marketing, offers and discounts</text><text x="1485" y="914" class="body">• Technology and cloud infrastructure</text><text x="1485" y="940" class="body">• Support, operations and employee costs</text>
+</svg>

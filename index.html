@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FeastFlow | NGP Canteen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="theme-switch-wrap">
+    <label class="theme-switch" for="themeToggle" title="Change theme">
+      <input class="theme-switch__checkbox" type="checkbox" id="themeToggle" />
+      <div class="theme-switch__container">
+        <div class="theme-switch__stars-container">***</div>
+        <div class="theme-switch__clouds"></div>
+        <div class="theme-switch__circle-container">
+          <div class="theme-switch__sun-moon-container">
+            <div class="theme-switch__moon">
+              <div class="theme-switch__spot"></div>
+              <div class="theme-switch__spot"></div>
+              <div class="theme-switch__spot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </label>
+  </div>
+
+  <div class="page-shell">
+    <section class="auth-layout" id="loginView">
+      <div class="login-container">
+        <form class="login-card" id="loginForm">
+          <div class="login-title">
+            <span class="login-text">NGP Canteen Login</span>
+          </div>
+
+          <div class="login-form">
+            <div class="input-group">
+              <input class="login-input" type="text" id="username" placeholder="Enter username" required />
+            </div>
+
+            <div class="input-group">
+              <div class="password-field">
+                <input class="login-input" type="password" id="password" placeholder="Enter password" required />
+                <button type="button" class="password-toggle" id="passwordToggle" aria-label="Show password">Show</button>
+              </div>
+            </div>
+
+            <div class="input-group hidden" id="confirmPasswordGroup">
+              <input class="login-input" type="password" id="confirmPassword" placeholder="Confirm password" />
+            </div>
+
+            <div class="input-group hidden" id="adminKeyGroup">
+              <input class="login-input" type="password" id="adminKey" placeholder="Enter admin special key" />
+            </div>
+
+            <p class="helper-text hidden" id="loginHelper"></p>
+            <p class="login-error hidden" id="loginError">Incorrect username or password.</p>
+            <p class="signup-success hidden" id="signupSuccess">Account created. Sign in now.</p>
+            <button type="submit" class="login-btn" id="loginSubmitBtn">Login</button>
+            <button type="button" class="back-choice-btn hidden" id="backToChoiceBtn">Back</button>
+
+            <div class="account-choice hidden" id="accountChoicePanel">
+              <button type="button" class="choice-card student-choice" id="studentSignupBtn">
+                <span>Student Login</span>
+              </button>
+              <button type="button" class="choice-card admin-choice" id="adminSignupBtn">
+                <span>Admin Login</span>
+              </button>
+              <button type="button" class="back-choice-btn choice-back" id="choiceBackBtn">Back</button>
+            </div>
+            <button type="button" class="login-mode-btn" id="modeToggleBtn">Create new user</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="app-view hidden" id="appView">
+      <header class="hero">
+        <div>
+          <div class="brand-chip">NGP CANTEEN</div>
+          <h1>ADD THE AVAILABLE FOOD IN THE CANTEEN</h1>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="back-page-btn" data-back-login>Back</button>
+          <button type="button" class="logout-btn" data-logout>Logout</button>
+        </div>
+      </header>
+
+      <main class="content-grid single-column">
+        <section class="menu-section">
+          <div class="availability-panel analytics-panel">
+            <div class="section-head compact">
+              <div>
+                <p class="eyebrow">Order Analytics</p>
+                <h3>Sales summary</h3>
+              </div>
+              <button type="button" class="primary-btn" id="downloadExcelBtn">Download Excel report</button>
+            </div>
+            <div class="analytics-cards" id="analyticsCards"></div>
+            <p class="food-status hidden" id="analyticsStatus"></p>
+          </div>
+          <div class="availability-panel">
+            <div class="section-head compact">
+              <div>
+                <p class="eyebrow">Availability</p>
+                <h3>Add food available in the canteen</h3>
+              </div>
+            </div>
+            <form class="add-food-form" id="addFoodForm">
+              <label>
+                <span>Food name</span>
+                <input type="text" id="foodName" placeholder="Enter food name" required />
+              </label>
+              <label>
+                <span>Category</span>
+                <select id="foodCategory" required>
+                  <option value="">Select category</option>
+                  <option value="Breakfast">Breakfast</option>
+                  <option value="Lunch">Lunch</option>
+                  <option value="Snacks">Snacks</option>
+                  <option value="Drinks">Drinks</option>
+                  <option value="Desserts">Desserts</option>
+                </select>
+              </label>
+              <label>
+                <span>Price</span>
+                <input type="number" id="foodPrice" placeholder="Enter price" min="1" required />
+              </label>
+              <label>
+                <span>Quantity</span>
+                <input type="number" id="foodQuantity" placeholder="Enter quantity" min="1" required />
+              </label>
+              <label>
+                <span>Browse image</span>
+                <input type="file" id="foodImage" accept="image/*" />
+              </label>
+              <button type="submit" class="primary-btn" id="foodSubmitBtn">Add food</button>
+            </form>
+            <p class="food-status hidden" id="foodStatus">Food item added to the canteen menu.</p>
+          </div>
+
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Menu</p>
+              <h3>Canteen specials</h3>
+            </div>
+            <div class="pill-row">
+              <button type="button" class="pill active" data-category="All">All</button>
+              <button type="button" class="pill" data-category="Breakfast">Breakfast</button>
+              <button type="button" class="pill" data-category="Lunch">Lunch</button>
+              <button type="button" class="pill" data-category="Snacks">Snacks</button>
+              <button type="button" class="pill" data-category="Drinks">Drinks</button>
+            </div>
+          </div>
+
+          <div class="menu-grid" id="menuGrid"></div>
+        </section>
+      </main>
+    </section>
+
+    <section class="app-view hidden" id="studentView">
+      <header class="hero">
+        <div>
+          <div class="brand-chip">NGP STUDENT</div>
+          <h1>ORDER FOOD FROM THE CANTEEN</h1>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="back-page-btn" data-back-login>Back</button>
+          <button type="button" class="logout-btn" data-logout>Logout</button>
+        </div>
+      </header>
+
+      <main class="content-grid">
+        <section class="menu-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Order Menu</p>
+              <h3>Available foods</h3>
+            </div>
+          </div>
+
+          <div class="menu-grid" id="studentMenuGrid"></div>
+        </section>
+
+        <aside class="cart-panel">
+          <div class="section-head compact">
+            <div>
+              <p class="eyebrow">Cart</p>
+              <h3>Your order</h3>
+            </div>
+          </div>
+
+          <div class="cart-items" id="studentCartItems">
+            <p class="empty-state">Your cart is empty. Add food to place an order.</p>
+          </div>
+
+          <div class="cart-summary">
+            <div>
+              <span>Subtotal</span>
+              <strong id="studentSubtotal">Rs. 0.00</strong>
+            </div>
+            <div class="total-row">
+              <span>Total</span>
+              <strong id="studentTotal">Rs. 0.00</strong>
+            </div>
+          </div>
+
+          <button class="primary-btn checkout-btn" id="studentCheckoutBtn">Place order</button>
+        </aside>
+      </main>
+    </section>
+
+    <section class="app-view hidden" id="paymentView">
+      <header class="hero">
+        <div>
+          <div class="brand-chip">PAYMENT</div>
+          <h1>COMPLETE YOUR PAYMENT</h1>
+        </div>
+        <button type="button" class="back-page-btn" data-back-student>Back</button>
+      </header>
+
+      <main class="content-grid single-column">
+        <section class="menu-section">
+          <div class="availability-panel">
+            <div class="section-head compact">
+              <div>
+                <p class="eyebrow">Payment Summary</p>
+                <h3>Review and pay</h3>
+              </div>
+            </div>
+
+            <div class="cart-items" id="paymentItems"></div>
+
+            <div class="payment-user-panel">
+              <label class="payment-user-label" for="paymentUsername">TYPE THE USER</label>
+              <input type="text" id="paymentUsername" class="payment-user-input" placeholder="TYPE THE USER NAME" autocomplete="name" />
+              <label class="payment-user-label" for="paymentPhone">PHONE NUMBER</label>
+              <input type="tel" id="paymentPhone" class="payment-user-input" placeholder="TYPE THE PHONE NUMBER" autocomplete="tel" />
+            </div>
+
+            <div class="payment-methods">
+              <p class="eyebrow">Method Of Payment</p>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="UPI" checked />
+                <span>UPI</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="Counter" />
+                <span>Pay at counter</span>
+              </label>
+            </div>
+
+            <div class="payment-qr-panel">
+              <p class="eyebrow">Scan To Pay</p>
+              <div class="payment-qr-image" aria-label="Sample payment QR code">
+                <span>UPI</span>
+              </div>
+            </div>
+
+            <div class="cart-summary">
+              <div>
+                <span>Total Amount</span>
+                <strong id="paymentTotal">Rs. 0.00</strong>
+              </div>
+            </div>
+
+            <p class="food-status hidden" id="paymentTokenMessage"></p>
+
+            <div class="payment-actions">
+              <button type="button" class="edit-btn" id="backToCartBtn">Back to cart</button>
+              <button type="button" class="primary-btn" id="confirmPaymentBtn">Pay now</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </section>
+
+    <section class="app-view hidden" id="tokenView">
+      <header class="hero">
+        <div>
+          <div class="brand-chip">ORDER TOKEN</div>
+          <h1>YOUR ORDER IS CONFIRMED</h1>
+        </div>
+        <button type="button" class="back-page-btn" data-back-student>Back</button>
+      </header>
+
+      <main class="content-grid single-column">
+        <section class="menu-section">
+          <div class="token-panel">
+            <p class="eyebrow">Token Number</p>
+            <h2 id="orderTokenNumber">NGP0000</h2>
+            <p class="panel-copy">Show this token while collecting your food from the canteen.</p>
+
+            <div class="cart-items token-items" id="tokenOrderItems"></div>
+
+            <div class="cart-summary">
+              <div>
+                <span>Total Amount</span>
+                <strong id="tokenOrderTotal">Rs. 0.00</strong>
+              </div>
+            </div>
+
+            <p class="sms-status" id="smsStatus"></p>
+
+            <div class="payment-actions">
+              <button type="button" class="edit-btn" id="sendSmsBtn">Send SMS again</button>
+              <button type="button" class="primary-btn" id="backToMenuBtn">Back to menu</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </section>
+
+    <section class="loader-view hidden" id="loaderView">
+      <div class="loader-panel">
+        <div class="book" aria-hidden="true">
+          <div class="book__pg-shadow"></div>
+          <div class="book__pg"></div>
+          <div class="book__pg book__pg--2"></div>
+          <div class="book__pg book__pg--3"></div>
+          <div class="book__pg book__pg--4"></div>
+          <div class="book__pg book__pg--5"></div>
+        </div>
+        <p class="loader-copy">Loading next page...</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
